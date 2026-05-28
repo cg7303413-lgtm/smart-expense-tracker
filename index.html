@@ -1,0 +1,164 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Expense Tracker</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+
+<section class="landing-page" id="landingPage">
+
+  <nav>
+    <h1>ExpenseTracker</h1>
+
+    <div class="nav-buttons">
+      <button onclick="showLogin()">Login</button>
+      <button onclick="showSignup()">Signup</button>
+    </div>
+  </nav>
+
+  <div class="hero">
+
+    <div class="hero-text">
+      <h2>Track Your Expenses Smartly</h2>
+
+      <p>
+        Professional expense tracker with reports,
+        charts, PDF export and responsive design.
+      </p>
+
+      <button onclick="showSignup()">
+        Get Started
+      </button>
+    </div>
+
+    <div class="hero-animation">
+      <div class="circle"></div>
+      <div class="circle2"></div>
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="auth-container" id="authContainer">
+
+  <div class="auth-box">
+
+    <h2 id="formTitle">Login</h2>
+
+    <input type="text" id="username" placeholder="Username">
+
+    <input type="password" id="password" placeholder="Password">
+
+    <button id="authBtn" onclick="login()">
+      Login
+    </button>
+
+    <p id="toggleText">
+      Don't have account?
+      <span onclick="showSignup()">Signup</span>
+    </p>
+
+  </div>
+
+</section>
+
+
+<section class="dashboard" id="dashboard">
+
+  <header>
+
+    <h2>Smart Expense Tracker</h2>
+
+    <button class="logout-btn" onclick="logout()">
+      Logout
+    </button>
+
+  </header>
+
+
+  <div class="cards">
+
+    <div class="card">
+      <h3>Total Income</h3>
+      <p id="incomeDisplay">₹0</p>
+    </div>
+
+    <div class="card">
+      <h3>Total Expense</h3>
+      <p id="expenseDisplay">₹0</p>
+    </div>
+
+    <div class="card">
+      <h3>Balance</h3>
+      <p id="balanceDisplay">₹0</p>
+    </div>
+
+  </div>
+
+
+  <div class="expense-form">
+
+    <input type="text" id="title" placeholder="Expense Title">
+
+    <input type="number" id="amount" placeholder="Amount">
+
+    <select id="type">
+      <option value="income">Income</option>
+      <option value="expense">Expense</option>
+    </select>
+
+    <button onclick="addTransaction()">
+      Add
+    </button>
+
+  </div>
+
+
+  <div class="report-buttons">
+
+    <button onclick="showWeeklyReport()">
+      Weekly Report
+    </button>
+
+    <button onclick="showMonthlyReport()">
+      Monthly Report
+    </button>
+
+    <button onclick="downloadPDF()">
+      Download PDF
+    </button>
+
+  </div>
+
+
+  <div class="chart-container">
+    <canvas id="expenseChart"></canvas>
+  </div>
+
+
+  <div class="transaction-section">
+
+    <h3>Transactions</h3>
+
+    <div id="transactionList"></div>
+
+  </div>
+
+</section>
+
+<script src="script.js"></script>
+
+</body>
+</html>
